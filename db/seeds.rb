@@ -11,11 +11,26 @@
 #         name: Faker::Company.name)
 # end
 
-5.times do
-    Employee.create(
-        firstName: Faker::Name.first_name,
-        lastName: Faker::Name.last_name,
-        email: Faker::Internet.email,
-        phone: Faker::PhoneNumber.phone_number,
-        organization_id: Faker::Number.within(range: 1..5))
+# 5.times do
+#     Employee.create(
+#         firstName: Faker::Name.first_name,
+#         lastName: Faker::Name.last_name,
+#         email: Faker::Internet.email,
+#         phone: Faker::PhoneNumber.phone_number,
+#         organization_id: Faker::Number.within(range: 1..5))
+# end
+
+# 5.times do
+#     Partner.create(
+#         firstName: Faker::Name.first_name,
+#         lastName: Faker::Name.last_name,
+#         email: Faker::Internet.email,
+#         phone: Faker::PhoneNumber.phone_number,
+#         website: Faker::Internet.url)
+# end
+
+1.times do
+    OrganizationsPartner.create(
+        partner_id: 1,
+        organization_id: 2)
 end

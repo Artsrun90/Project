@@ -1,0 +1,75 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/employee/GetPersonByEmail":
+    post:
+      summary: Creates a employee
+      tags:
+      - Employees
+      consumes:
+      - application/json
+      - application/xml
+      parameters:
+      - name: employee
+        in: body
+        schema:
+          type: object
+          properties:
+            firstName:
+              type: string
+            lastName:
+              type: string
+            email:
+              type: string
+            phone:
+              type: string
+            name:
+              type: string
+          required:
+          - firstName
+          - email
+      responses:
+        '201':
+          description: employee created
+        '422':
+          description: invalid request
+  "/api/v1/employee/GetPersonDetails/{id}":
+    get:
+      summary: Retrieves a employee
+      tags:
+      - Employees
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - name: employee
+        in: path
+        type: string
+        required: true
+      responses:
+        '200':
+          description: name found
+          schema:
+            type: object
+            properties:
+              id:
+                type: integer
+              firstName:
+                type: string
+              lastName:
+                type: string
+              email:
+                type: string
+              phone:
+                type: string
+              name:
+                type: string
+            required:
+            - id
+            - firstName
+            - name
+        '404':
+          description: empioyee not found
